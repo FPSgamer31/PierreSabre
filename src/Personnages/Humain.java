@@ -1,7 +1,7 @@
 package Personnages;
 
 public class Humain {
-	private String nom;
+	public String nom;
 	private String boissonFavorite;
 	protected int porteMonnaie;
 	
