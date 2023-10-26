@@ -18,10 +18,16 @@ public class Yakuza extends Humain {
 	
 	public void extorquer(Commerçant victime) {
 		parler("Tiens, tiens, ne serait-ce pas un faible marchand qui passe par là ?");
-		parler(victime +", si tu tiens à la vie donne moi ta bourse !");
+		parler(victime.getNom() +", si tu tiens à la vie donne moi ta bourse !");
 		int vol = victime.seFaireExtorquer();
 		réputation+=1;
-		parler("J’ai piqué les "+ vol + " sous de "+ victime +", ce qui me fait "+ porteMonnaie +" sous dans ma poche. Hi ! Hi !");
+		parler("J’ai piqué les "+ vol + " sous de "+ victime.getNom() +", ce qui me fait "+ porteMonnaie +" sous dans ma poche. Hi ! Hi !");
+	}
+	public static void main(String[] args) {
+		Yakuza yaku = new Yakuza("Yaku le Noir", "Whisky", 30, "Clan", 0);
+		Commerçant marco = new Commerçant("Marco", "Thé", 15);
+		yaku.direBonjour();
+		yaku.extorquer(marco);
 	}
 
 }
