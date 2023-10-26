@@ -3,10 +3,9 @@ package Personnages;
 public class Yakuza extends Humain {
 	private String clan;
 	private int réputation = 0;
-	public Yakuza(String nom, String boissonFav, int porteMonnaie, String Clan, int réputation) {
+	public Yakuza(String nom, String boissonFav, int porteMonnaie, String Clan) {
 		super(nom,boissonFav,porteMonnaie);
 		this.clan=Clan;
-		this.réputation=réputation;
 	}
 	
 	public int getReputation() {
@@ -23,11 +22,4 @@ public class Yakuza extends Humain {
 		réputation+=1;
 		parler("J’ai piqué les "+ vol + " sous de "+ victime.getNom() +", ce qui me fait "+ porteMonnaie +" sous dans ma poche. Hi ! Hi !");
 	}
-	public static void main(String[] args) {
-		Yakuza yaku = new Yakuza("Yaku le Noir", "Whisky", 30, "Clan", 0);
-		Commerçant marco = new Commerçant("Marco", "Thé", 15);
-		yaku.direBonjour();
-		yaku.extorquer(marco);
-	}
-
 }
